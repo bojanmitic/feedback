@@ -1,0 +1,15 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "typescript.preferences.includePackageJsonAutoImports": "on",
+  "typescript.validate.enable": true,
+  "typescript.suggest.autoImports": true,
+  "javascript.validate.enable": true,
+  "files.associations": {
+    "*.vue": "vue"
+  },
+  "typescript.disableAutomaticTypeAcquisition": false,
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  }
+}

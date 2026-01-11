@@ -2,11 +2,13 @@
   <div class="container">
     <h1>Feedback Form</h1>
     <p>Welcome to the feedback form!</p>
+    
+    <EmojiSelector v-model="selectedEmoji" />
   </div>
 </template>
 
 <script setup lang="ts">
-// Page logic will go here
+const selectedEmoji = ref('')
 </script>
 
 <style scoped>
