@@ -10,11 +10,12 @@
     "preview": "nuxt preview"
   },
   "dependencies": {
-    "nuxt": "^3.12.0",
     "@electric-sql/pglite": "^0.1.0",
-    "@nuxtjs/i18n": "^8.0.0"
+    "@nuxtjs/i18n": "^8.0.0",
+    "nuxt": "^3.12.0"
   },
   "devDependencies": {
-    "@nuxt/devtools": "latest"
+    "@nuxt/devtools": "latest",
+    "@types/node": "^25.0.6"
   }
 }
