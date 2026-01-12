@@ -28,5 +28,31 @@
   "done": "Done",
   "feedbackPublic": "Feedback is public",
   "feedbackNotPublic": "Feedback is not public",
-  "studioWillContact": "Yoga Studio will be in touch"
+  "studioWillContact": "Yoga Studio will be in touch",
+  "login": {
+    "title": "Login",
+    "description": "Please enter your credentials to access your account.",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "submit": "Login",
+    "submitting": "Logging in...",
+    "noAccount": "Don't have an account?",
+    "register": "Register here"
+  },
+  "registration": {
+    "title": "Register",
+    "description": "Create a new account to get started.",
+    "email": "Email",
+    "emailPlaceholder": "Enter your email",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "phone": "Phone Number",
+    "phonePlaceholder": "Enter your phone number (optional)",
+    "submit": "Register",
+    "submitting": "Registering...",
+    "hasAccount": "Already have an account?",
+    "login": "Login here"
+  }
 }
