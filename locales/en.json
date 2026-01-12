@@ -1,0 +1,32 @@
+{
+  "studioName": "Yoga Studio",
+  "title": "Thank you for your feedback!",
+  "description": "Jooga Studio has received your feedback. You can still edit your feedback if you wish so and find out more about how we did, and how we could serve you better in the future.",
+  "emojiLabels": {
+    "poor": "Poor",
+    "fair": "Fair",
+    "satisfactory": "Satisfactory",
+    "good": "Good",
+    "excellent": "Excellent!"
+  },
+  "freeTextPrompt": {
+    "poor": "Please tell us a bit more why you chose poor?",
+    "fair": "Please tell us a bit more why you chose fair?",
+    "satisfactory": "Please tell us a bit more why you chose satisfactory?",
+    "good": "Please tell us a bit more why you chose good?",
+    "excellent": "Please tell us a bit more why you chose excellent?"
+  },
+  "consent": {
+    "makePublic": "Make the feedback public",
+    "makePublicDescription": "Your feedback may be displayed in Joga Studio wellbeing and healthcare. Check our privacy policy...",
+    "wantsContact": "I wish that Yoga Studio will be in touch with me",
+    "contactPlaceholder": "Contact: email or phone",
+    "privacyAgreement": "I agree to the processing of the feedback data in accordance with our Privacy Policy."
+  },
+  "submit": "Send feedback",
+  "thankYou": "Thank you! We received your feedback!",
+  "done": "Done",
+  "feedbackPublic": "Feedback is public",
+  "feedbackNotPublic": "Feedback is not public",
+  "studioWillContact": "Yoga Studio will be in touch"
+}

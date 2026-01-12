@@ -1,32 +1,20 @@
 <template>
   <div class="container">
-    <h1>Feedback Form</h1>
-    <p>Welcome to the feedback form!</p>
-    
-    <EmojiSelector v-model="selectedEmoji" />
+    <FeedbackForm @submitted="handleSubmitted" />
   </div>
 </template>
 
 <script setup lang="ts">
-const selectedEmoji = ref('')
+const handleSubmitted = (data: any) => {
+  console.log('Form submitted:', data)
+  // TODO: Handle form submission
+}
 </script>
 
 <style scoped>
 .container {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 2rem;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-}
-
-h1 {
-  font-weight: 600;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-p {
-  font-size: 1.1rem;
-  color: #666;
+  padding: 2rem 1rem;
+  min-height: 100vh;
+  background: #f5f5f5;
 }
 </style>
