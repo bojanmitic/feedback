@@ -13,8 +13,15 @@ const handleSubmitted = (data: any) => {
 
 <style scoped>
 .container {
-  padding: 2rem 1rem;
+  padding: 1rem;
   min-height: 100vh;
   background: #f5f5f5;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 2rem 1rem;
+  }
 }
 </style>

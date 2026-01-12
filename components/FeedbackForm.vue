@@ -69,10 +69,18 @@ const handleSubmit = () => {
 .feedback-form {
   max-width: 600px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 1.5rem;
   background: white;
   border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .feedback-form {
+    padding: 2rem;
+  }
 }
 
 .form-header {
@@ -80,6 +88,15 @@ const handleSubmit = () => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+@media (max-width: 480px) {
+  .form-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 .studio-name {
@@ -89,10 +106,16 @@ const handleSubmit = () => {
 }
 
 .form-title {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: #2c3e50;
   margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .form-title {
+    font-size: 1.75rem;
+  }
 }
 
 .form-description {

@@ -81,21 +81,32 @@ function selectEmoji(value: string): void {
 .emoji-container {
   display: flex;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.25rem;
   margin-bottom: 2rem;
   align-items: flex-start;
-  min-height: 140px;
+  min-height: 100px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+@media (min-width: 640px) {
+  .emoji-container {
+    min-height: 140px;
+    overflow-x: visible;
+  }
 }
 
 .emoji-button {
   flex: 1;
-  min-width: 100px;
+  min-width: 0;
+  flex-shrink: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1.5rem 1rem;
-  border: 3px solid #d1d5db;
-  border-radius: 12px;
+  padding: 0.75rem 0.25rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
   background: white;
   cursor: pointer;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -103,7 +114,17 @@ function selectEmoji(value: string): void {
   pointer-events: auto;
   z-index: 0;
   box-sizing: border-box;
-  min-height: 140px;
+  min-height: 100px;
+}
+
+@media (min-width: 640px) {
+  .emoji-button {
+    min-width: 100px;
+    padding: 1.5rem 1rem;
+    border-width: 3px;
+    border-radius: 12px;
+    min-height: 140px;
+  }
 }
 
 .emoji-button:hover {
@@ -113,7 +134,7 @@ function selectEmoji(value: string): void {
 }
 
 .emoji-button.selected {
-  border-width: 3px;
+  border-width: 2px;
   transform: scale(1);
   transform-origin: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
@@ -121,29 +142,58 @@ function selectEmoji(value: string): void {
   pointer-events: auto;
 }
 
+@media (min-width: 640px) {
+  .emoji-button.selected {
+    border-width: 3px;
+  }
+}
+
 .emoji-icon-wrapper {
-  width: 60px;
-  height: 60px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
   transition: background-color 0.3s ease;
 }
 
 .emoji-icon {
-  width: 60px;
-  height: 60px;
+  width: 32px;
+  height: 32px;
   object-fit: contain;
 }
 
+@media (min-width: 640px) {
+  .emoji-icon-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 0.75rem;
+  }
+
+  .emoji-icon {
+    width: 60px;
+    height: 60px;
+  }
+}
+
 .emoji-label {
-  font-size: 0.875rem;
+  font-size: 0.65rem;
   font-weight: 500;
   color: #333;
   text-align: center;
   transition: color 0.3s ease;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+@media (min-width: 640px) {
+  .emoji-label {
+    font-size: 0.875rem;
+    line-height: normal;
+    word-break: normal;
+  }
 }
 
 .emoji-button.selected .emoji-label {
