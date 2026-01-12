@@ -17,9 +17,13 @@
           @change="$emit('update:wantsContact', ($event.target as HTMLInputElement).checked)" type="checkbox" />
         <label for="wants-contact">
           {{ $t('consent.wantsContact') }}
-          <input v-if="wantsContact" :model-value="contactInfo"
-            @update:model-value="$emit('update:contactInfo', $event)" type="text" class="contact-input"
-            :placeholder="$t('consent.contactPlaceholder')" />
+          <div v-if="userEmail || userPhone" class="contact-info">
+            <span class="contact-label">{{ $t('consent.contact') }}: </span>
+            <span class="contact-details">
+              <span v-if="userEmail">{{ userEmail }}</span><span v-if="userEmail && userPhone">, </span><span
+                v-if="userPhone">{{ userPhone }}</span>
+            </span>
+          </div>
         </label>
       </div>
 
@@ -41,6 +45,8 @@ defineProps<{
   wantsContact: boolean
   contactInfo: string
   agreedToPrivacy: boolean
+  userEmail?: string | null
+  userPhone?: string | null
 }>()
 
 defineEmits<{
@@ -88,19 +94,19 @@ defineEmits<{
   margin-top: 0.25rem;
 }
 
-.contact-input {
-  margin-top: 0.75rem;
-  width: 100%;
-  padding: 0.75rem;
-  border: 2px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-family: inherit;
-  transition: border-color 0.3s ease;
+.contact-info {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: #666;
+  line-height: 1.6;
 }
 
-.contact-input:focus {
-  outline: none;
-  border-color: #4a90e2;
+.contact-label {
+  font-weight: 500;
+  color: #666;
+}
+
+.contact-details {
+  color: #666;
 }
 </style>

@@ -2,6 +2,8 @@ interface AuthResponse {
   success: boolean;
   user?: {
     id: number;
+    firstName?: string | null;
+    lastName?: string | null;
     email: string;
     phone?: string | null;
     created_at?: string;
@@ -9,10 +11,12 @@ interface AuthResponse {
   error?: string;
 }
 
+// Shared state - singleton pattern
+const isAuthenticated = ref(false);
+const user = ref<any>(null);
+const isLoading = ref(true);
+
 export const useAuth = () => {
-  const isAuthenticated = ref(false);
-  const user = ref<any>(null);
-  const isLoading = ref(true);
 
   const checkAuth = async () => {
     try {
@@ -50,11 +54,11 @@ export const useAuth = () => {
     }
   };
 
-  const register = async (email: string, password: string, phone?: string) => {
+  const register = async (firstName: string, lastName: string, email: string, password: string, phone?: string) => {
     try {
       const response = await $fetch<AuthResponse>("/api/auth/register", {
         method: "POST",
-        body: { email, password, phone },
+        body: { firstName, lastName, email, password, phone },
       });
       if (response.success && response.user) {
         isAuthenticated.value = true;

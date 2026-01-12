@@ -37,14 +37,18 @@ defineEmits<{
 
 .free-text-input {
   width: 100%;
+  height: 120px;
   min-height: 120px;
+  max-height: 120px;
   padding: 1rem;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 1rem;
   font-family: inherit;
-  resize: vertical;
+  resize: none;
+  overflow-y: auto;
   transition: border-color 0.3s ease;
+  box-sizing: border-box;
 }
 
 .free-text-input:focus {

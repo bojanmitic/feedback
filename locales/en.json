@@ -20,6 +20,7 @@
     "makePublic": "Make the feedback public",
     "makePublicDescription": "Your feedback may be displayed in Joga Studio wellbeing and healthcare. Check our privacy policy...",
     "wantsContact": "I wish that Yoga Studio will be in touch with me",
+    "contact": "Contact",
     "contactPlaceholder": "Contact: email or phone",
     "privacyAgreement": "I agree to the processing of the feedback data in accordance with our Privacy Policy."
   },
@@ -44,6 +45,10 @@
   "registration": {
     "title": "Register",
     "description": "Create a new account to get started.",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "Enter your first name",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Enter your last name",
     "email": "Email",
     "emailPlaceholder": "Enter your email",
     "password": "Password",
@@ -66,6 +71,7 @@
     "loginSuccess": "Login successful! Welcome back!",
     "loginError": "Login failed. Please check your credentials.",
     "logoutSuccess": "Logged out successfully",
+    "feedbackSubmitted": "Feedback submitted successfully!",
     "error": "An error occurred. Please try again."
   }
 }
