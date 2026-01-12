@@ -54,5 +54,18 @@
     "submitting": "Rekisteröidään...",
     "hasAccount": "Onko sinulla jo tili?",
     "login": "Kirjaudu tässä"
+  },
+  "auth": {
+    "or": "TAI",
+    "alreadyHaveAccount": "Onko sinulla jo tili?",
+    "loginHere": "Kirjaudu tässä"
+  },
+  "toast": {
+    "registrationSuccess": "Rekisteröinti onnistui! Tervetuloa!",
+    "registrationError": "Rekisteröinti epäonnistui. Yritä uudelleen.",
+    "loginSuccess": "Kirjautuminen onnistui! Tervetuloa takaisin!",
+    "loginError": "Kirjautuminen epäonnistui. Tarkista kirjautumistietosi.",
+    "logoutSuccess": "Kirjauduttu ulos onnistuneesti",
+    "error": "Tapahtui virhe. Yritä uudelleen."
   }
 }

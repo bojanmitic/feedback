@@ -54,5 +54,18 @@
     "submitting": "Registering...",
     "hasAccount": "Already have an account?",
     "login": "Login here"
+  },
+  "auth": {
+    "or": "OR",
+    "alreadyHaveAccount": "Already have an account?",
+    "loginHere": "Login here"
+  },
+  "toast": {
+    "registrationSuccess": "Registration successful! Welcome!",
+    "registrationError": "Registration failed. Please try again.",
+    "loginSuccess": "Login successful! Welcome back!",
+    "loginError": "Login failed. Please check your credentials.",
+    "logoutSuccess": "Logged out successfully",
+    "error": "An error occurred. Please try again."
   }
 }
