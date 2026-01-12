@@ -28,5 +28,31 @@
   "done": "Valmis",
   "feedbackPublic": "Palaute on julkinen",
   "feedbackNotPublic": "Palaute ei ole julkinen",
-  "studioWillContact": "Jooga Studio on yhteydessä"
+  "studioWillContact": "Jooga Studio on yhteydessä",
+  "login": {
+    "title": "Kirjaudu sisään",
+    "description": "Syötä kirjautumistietosi päästäksesi tilillesi.",
+    "email": "Sähköposti",
+    "emailPlaceholder": "Syötä sähköpostiosoitteesi",
+    "password": "Salasana",
+    "passwordPlaceholder": "Syötä salasanasi",
+    "submit": "Kirjaudu",
+    "submitting": "Kirjaudutaan...",
+    "noAccount": "Eikö sinulla ole tiliä?",
+    "register": "Rekisteröidy tässä"
+  },
+  "registration": {
+    "title": "Rekisteröidy",
+    "description": "Luo uusi tili aloittaaksesi.",
+    "email": "Sähköposti",
+    "emailPlaceholder": "Syötä sähköpostiosoitteesi",
+    "password": "Salasana",
+    "passwordPlaceholder": "Syötä salasanasi",
+    "phone": "Puhelinnumero",
+    "phonePlaceholder": "Syötä puhelinnumerosi (valinnainen)",
+    "submit": "Rekisteröidy",
+    "submitting": "Rekisteröidään...",
+    "hasAccount": "Onko sinulla jo tili?",
+    "login": "Kirjaudu tässä"
+  }
 }
