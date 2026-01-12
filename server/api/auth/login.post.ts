@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
 
     // Find user by email
     const result = await db.query(
-      "SELECT id, email, password, phone FROM users WHERE email = $1",
+      "SELECT id, first_name, last_name, email, password, phone FROM users WHERE email = $1",
       [email]
     );
 
@@ -54,6 +54,8 @@ export default defineEventHandler(async (event) => {
       success: true,
       user: {
         id: user.id,
+        firstName: user.first_name,
+        lastName: user.last_name,
         email: user.email,
         phone: user.phone,
       },

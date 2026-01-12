@@ -4,12 +4,12 @@ import bcrypt from "bcryptjs";
 export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
-    const { email, password, phone } = body;
+    const { firstName, lastName, email, password, phone } = body;
 
-    if (!email || !password) {
+    if (!firstName || !lastName || !email || !password) {
       throw createError({
         statusCode: 400,
-        statusMessage: "Email and password are required",
+        statusMessage: "First name, last name, email and password are required",
       });
     }
 
@@ -37,8 +37,8 @@ export default defineEventHandler(async (event) => {
 
     // Insert new user
     const result = await db.query(
-      "INSERT INTO users (email, password, phone) VALUES ($1, $2, $3) RETURNING id, email, phone, created_at",
-      [email, hashedPassword, phone || null]
+      "INSERT INTO users (first_name, last_name, email, password, phone) VALUES ($1, $2, $3, $4, $5) RETURNING id, first_name, last_name, email, phone, created_at",
+      [firstName, lastName, email, hashedPassword, phone || null]
     );
 
     const rows = Array.isArray(result) ? result : result.rows || [];
@@ -56,6 +56,8 @@ export default defineEventHandler(async (event) => {
       success: true,
       user: {
         id: user.id,
+        firstName: user.first_name,
+        lastName: user.last_name,
         email: user.email,
         phone: user.phone,
       },

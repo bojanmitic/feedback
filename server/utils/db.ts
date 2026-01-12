@@ -77,10 +77,28 @@ export async function getDb(): Promise<PGlite> {
         email VARCHAR(255) UNIQUE NOT NULL,
         password VARCHAR(255) NOT NULL,
         phone VARCHAR(50),
+        first_name VARCHAR(100),
+        last_name VARCHAR(100),
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       )
     `);
+
+    // Add first_name and last_name columns if they don't exist (for existing databases)
+    try {
+      await db.exec(
+        `ALTER TABLE users ADD COLUMN IF NOT EXISTS first_name VARCHAR(100)`
+      );
+    } catch (e) {
+      // Column might already exist, ignore
+    }
+    try {
+      await db.exec(
+        `ALTER TABLE users ADD COLUMN IF NOT EXISTS last_name VARCHAR(100)`
+      );
+    } catch (e) {
+      // Column might already exist, ignore
+    }
 
     // Create feedback table
     await db.exec(`

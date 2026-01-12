@@ -10,6 +10,18 @@
 
     <form @submit.prevent="handleSubmit">
       <div class="form-group">
+        <label for="firstName" class="form-label">{{ $t('registration.firstName') }}</label>
+        <input id="firstName" v-model="firstName" type="text" class="form-input"
+          :placeholder="$t('registration.firstNamePlaceholder')" required />
+      </div>
+
+      <div class="form-group">
+        <label for="lastName" class="form-label">{{ $t('registration.lastName') }}</label>
+        <input id="lastName" v-model="lastName" type="text" class="form-input"
+          :placeholder="$t('registration.lastNamePlaceholder')" required />
+      </div>
+
+      <div class="form-group">
         <label for="email" class="form-label">{{ $t('registration.email') }}</label>
         <input id="email" v-model="email" type="email" class="form-input"
           :placeholder="$t('registration.emailPlaceholder')" required />
@@ -48,9 +60,11 @@ const props = defineProps<{
 }>()
 
 const emit = defineEmits<{
-  submitted: [data: { email: string; password: string; phone?: string }]
+  submitted: [data: { firstName: string; lastName: string; email: string; password: string; phone?: string }]
 }>()
 
+const firstName = ref('')
+const lastName = ref('')
 const email = ref('')
 const password = ref('')
 const phone = ref('')
@@ -58,9 +72,11 @@ const phone = ref('')
 const isSubmitting = computed(() => props.isLoading || false)
 
 const handleSubmit = () => {
-  if (!email.value || !password.value) return
+  if (!firstName.value || !lastName.value || !email.value || !password.value) return
 
   const formData = {
+    firstName: firstName.value,
+    lastName: lastName.value,
     email: email.value,
     password: password.value,
     phone: phone.value || undefined

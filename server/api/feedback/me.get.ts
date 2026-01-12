@@ -14,27 +14,38 @@ export default defineEventHandler(async (event) => {
     const db = await getDb();
 
     const result = await db.query(
-      "SELECT id, first_name, last_name, email, phone, created_at FROM users WHERE id = $1",
+      `SELECT f.id, f.emoji, f.emoji_label, f.free_text, f.is_public, f.wants_contact, f.contact_info, f.agreed_to_privacy, f.created_at,
+              u.first_name, u.last_name
+       FROM feedback f
+       JOIN users u ON f.user_id = u.id
+       WHERE f.user_id = $1`,
       [userId]
     );
 
     const rows = Array.isArray(result) ? result : result.rows || [];
 
     if (rows.length === 0) {
-      throw createError({
-        statusCode: 404,
-        statusMessage: "User not found",
-      });
+      return {
+        success: true,
+        hasFeedback: false,
+        feedback: null,
+      };
     }
 
+    const feedback = rows[0];
     return {
       success: true,
-      user: rows[0],
+      hasFeedback: true,
+      feedback: {
+        ...feedback,
+        firstName: feedback.first_name,
+        lastName: feedback.last_name,
+      },
     };
   } catch (error: any) {
     throw createError({
       statusCode: error.statusCode || 500,
-      statusMessage: error.statusMessage || "Failed to get user",
+      statusMessage: error.statusMessage || "Failed to get feedback",
     });
   }
 });

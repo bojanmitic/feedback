@@ -20,6 +20,7 @@
     "makePublic": "Palaute on julkinen",
     "makePublicDescription": "Palautteesi voidaan näyttää Jooga Studio hyvinvointi- ja terveyspalveluissa. Tarkista tietosuojaselosteemme...",
     "wantsContact": "Haluan, että Jooga Studio ottaa minuun yhteyttä",
+    "contact": "Yhteystiedot",
     "contactPlaceholder": "Yhteystiedot: sähköposti tai puhelin",
     "privacyAgreement": "Hyväksyn tietojen käsittelyn tietosuojaselosteen mukaisesti"
   },
@@ -44,6 +45,10 @@
   "registration": {
     "title": "Rekisteröidy",
     "description": "Luo uusi tili aloittaaksesi.",
+    "firstName": "Etunimi",
+    "firstNamePlaceholder": "Syötä etunimesi",
+    "lastName": "Sukunimi",
+    "lastNamePlaceholder": "Syötä sukunimesi",
     "email": "Sähköposti",
     "emailPlaceholder": "Syötä sähköpostiosoitteesi",
     "password": "Salasana",
@@ -66,6 +71,7 @@
     "loginSuccess": "Kirjautuminen onnistui! Tervetuloa takaisin!",
     "loginError": "Kirjautuminen epäonnistui. Tarkista kirjautumistietosi.",
     "logoutSuccess": "Kirjauduttu ulos onnistuneesti",
+    "feedbackSubmitted": "Palaute lähetetty onnistuneesti!",
     "error": "Tapahtui virhe. Yritä uudelleen."
   }
 }

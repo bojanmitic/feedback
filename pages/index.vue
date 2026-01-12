@@ -28,10 +28,10 @@ onMounted(async () => {
   await checkAuth()
 })
 
-const handleRegistration = async (data: { email: string; password: string; phone?: string }) => {
+const handleRegistration = async (data: { firstName: string; lastName: string; email: string; password: string; phone?: string }) => {
   isRegistering.value = true
   try {
-    const result = await register(data.email, data.password, data.phone)
+    const result = await register(data.firstName, data.lastName, data.email, data.password, data.phone)
     if (result.success) {
       success(t('toast.registrationSuccess'))
       // User is now authenticated, feedback form will show
@@ -47,7 +47,6 @@ const handleRegistration = async (data: { email: string; password: string; phone
 }
 
 const handleSubmitted = (data: any) => {
-  console.log('Form submitted:', data)
   // TODO: Handle form submission
 }
 </script>
