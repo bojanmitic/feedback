@@ -37,18 +37,21 @@
 
 <script setup lang="ts">
 const { t } = useI18n()
+const props = defineProps<{
+  isLoading?: boolean
+}>()
+
 const emit = defineEmits<{
   submitted: [data: { email: string; password: string }]
 }>()
 
 const email = ref('')
 const password = ref('')
-const isSubmitting = ref(false)
+
+const isSubmitting = computed(() => props.isLoading || false)
 
 const handleSubmit = () => {
   if (!email.value || !password.value) return
-
-  isSubmitting.value = true
 
   const formData = {
     email: email.value,
@@ -56,7 +59,6 @@ const handleSubmit = () => {
   }
 
   emit('submitted', formData)
-  isSubmitting.value = false
 }
 </script>
 
