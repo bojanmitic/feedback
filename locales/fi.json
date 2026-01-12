@@ -1,0 +1,32 @@
+{
+  "studioName": "Jooga Studio",
+  "title": "Kiitos palautteestasi!",
+  "description": "Jooga Studio on vastaanottanut palautteesi. Voit vielä muokata palautettasi, jos haluat, ja saada lisätietoja siitä, miten pärjäsimmä, ja miten voisimme palvella sinua paremmin tulevaisuudessa.",
+  "emojiLabels": {
+    "poor": "Huono",
+    "fair": "Kohtalainen",
+    "satisfactory": "Tyydyttävä",
+    "good": "Hyvä",
+    "excellent": "Erinomainen!"
+  },
+  "freeTextPrompt": {
+    "poor": "Kerro tarkemmin, miksi valitsit huonon?",
+    "fair": "Kerro tarkemmin, miksi valitsit kohtalaisen?",
+    "satisfactory": "Kerro tarkemmin, miksi valitsit tyydyttävän?",
+    "good": "Kerro tarkemmin, miksi valitsit hyvän?",
+    "excellent": "Kertoisitko tarkemmin kokemuksestasi?"
+  },
+  "consent": {
+    "makePublic": "Palaute on julkinen",
+    "makePublicDescription": "Palautteesi voidaan näyttää Jooga Studio hyvinvointi- ja terveyspalveluissa. Tarkista tietosuojaselosteemme...",
+    "wantsContact": "Haluan, että Jooga Studio ottaa minuun yhteyttä",
+    "contactPlaceholder": "Yhteystiedot: sähköposti tai puhelin",
+    "privacyAgreement": "Hyväksyn tietojen käsittelyn tietosuojaselosteen mukaisesti"
+  },
+  "submit": "Lähetä palaute",
+  "thankYou": "Kiitos! Palautteesi on vastaanotettu!",
+  "done": "Valmis",
+  "feedbackPublic": "Palaute on julkinen",
+  "feedbackNotPublic": "Palaute ei ole julkinen",
+  "studioWillContact": "Jooga Studio on yhteydessä"
+}

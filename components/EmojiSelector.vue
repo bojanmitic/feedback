@@ -5,15 +5,17 @@
       :style="selectedEmoji === option.value ? { borderColor: option.bgColor } : {}" @click="selectEmoji(option.value)">
       <div class="emoji-icon-wrapper"
         :style="selectedEmoji === option.value ? { backgroundColor: option.bgColor } : {}">
-        <img :src="option.icon" :alt="option.label" class="emoji-icon" />
+        <img :src="option.icon" :alt="getLabel(option.value)" class="emoji-icon" />
       </div>
-      <span class="emoji-label" :style="selectedEmoji === option.value ? { color: option.bgColor } : {}">{{ option.label
-      }}</span>
+      <span class="emoji-label" :style="selectedEmoji === option.value ? { color: option.bgColor } : {}">{{
+        getLabel(option.value) }}</span>
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
+const { t } = useI18n()
+
 const props = defineProps<{
   modelValue: string
 }>()
@@ -30,7 +32,6 @@ const selectedEmoji = computed({
 interface EmojiOption {
   value: string
   icon: string
-  label: string
   bgColor: string
 }
 
@@ -38,37 +39,41 @@ const emojiOptions: EmojiOption[] = [
   {
     value: 'poor',
     icon: '/emojis/poor.svg',
-    label: 'Poor',
     bgColor: '#FFD4E4'
   },
   {
     value: 'fair',
     icon: '/emojis/fair.svg',
-    label: 'Fair',
     bgColor: '#FDCFC4'
   },
   {
     value: 'satisfactory',
     icon: '/emojis/satisfactory.svg',
-    label: 'Satisfactory',
     bgColor: '#FBECB7'
   },
   {
     value: 'good',
     icon: '/emojis/satisfied.svg',
-    label: 'Good',
     bgColor: '#DAEDCA'
   },
   {
     value: 'excellent',
     icon: '/emojis/excellent.svg',
-    label: 'Excellent!',
     bgColor: '#B5F0E2'
   }
 ]
 
+const getLabel = (value: string) => {
+  try {
+    const label = t(`emojiLabels.${value}`)
+    return label || value
+  } catch (error) {
+    return value
+  }
+}
+
 function selectEmoji(value: string): void {
-  selectedEmoji.value = value
+  emit('update:modelValue', value)
 }
 </script>
 
@@ -79,6 +84,7 @@ function selectEmoji(value: string): void {
   gap: 1rem;
   margin-bottom: 2rem;
   align-items: flex-start;
+  min-height: 140px;
 }
 
 .emoji-button {
@@ -88,12 +94,16 @@ function selectEmoji(value: string): void {
   flex-direction: column;
   align-items: center;
   padding: 1.5rem 1rem;
-  border: 2px solid #d1d5db;
+  border: 3px solid #d1d5db;
   border-radius: 12px;
   background: white;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
   position: relative;
+  pointer-events: auto;
+  z-index: 0;
+  box-sizing: border-box;
+  min-height: 140px;
 }
 
 .emoji-button:hover {
@@ -104,10 +114,11 @@ function selectEmoji(value: string): void {
 
 .emoji-button.selected {
   border-width: 3px;
-  transform: scale(1.05);
+  transform: scale(1);
   transform-origin: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   z-index: 1;
+  pointer-events: auto;
 }
 
 .emoji-icon-wrapper {
