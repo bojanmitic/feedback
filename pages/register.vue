@@ -12,10 +12,10 @@ const { success, error: showError } = useToast()
 
 const isLoading = ref(false)
 
-const handleSubmitted = async (data: { email: string; password: string; phone?: string }) => {
+const handleSubmitted = async (data: { firstName: string; lastName: string; email: string; password: string; phone?: string }) => {
   isLoading.value = true
   try {
-    const result = await register(data.email, data.password, data.phone)
+    const result = await register(data.firstName, data.lastName, data.email, data.password, data.phone)
     if (result.success) {
       success(t('toast.registrationSuccess'))
       // Redirect to home page after successful registration
